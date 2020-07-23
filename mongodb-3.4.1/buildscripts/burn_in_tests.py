@@ -59,7 +59,7 @@ def parse_command_line():
     # The executor_file and suite_files defaults are required to make the
     # suite resolver work correctly.
     parser.set_defaults(base_commit=None,
-                        branch="master",
+                        branch="main",
                         buildvariant=None,
                         check_evergreen=False,
                         evergreen_file="etc/evergreen.yml",
@@ -152,7 +152,7 @@ def read_evg_config():
 def find_last_activated_task(revisions, variant, branch_name):
     """ Get the git hash of the most recently activated build before this one """
     rest_prefix = "/rest/v1/"
-    project = "mongodb-mongo-master"
+    project = "mongodb-mongo-main"
     build_prefix = "mongodb_mongo_" + branch_name + "_" + variant.replace('-', '_')
 
     evg_cfg = read_evg_config()
